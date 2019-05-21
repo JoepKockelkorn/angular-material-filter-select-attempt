@@ -1,0 +1,7 @@
+.filter-select {
+  width: 100%;
+}
+
+.filter-select--clear-button {
+  cursor: pointer;
+}

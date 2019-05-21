@@ -1,0 +1,15 @@
+<mat-form-field floatLabel="always" class="filter-select">
+
+  <input #filter type="text" [placeholder]="placeholder" matInput [formControl]="inputCtrl" [matAutocomplete]="auto" (blur)="onBlur()" (focus)="onFocus()">
+  <mat-spinner *ngIf="searching" [diameter]="15" matSuffix></mat-spinner>
+  <mat-icon matSuffix [inline]="true" *ngIf="showClearButton && !searching && ctrl.value" (click)="clearValue($event)" class="filter-select--clear-button">clear</mat-icon>
+
+  <mat-label></mat-label>
+
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelect($event)">
+    <mat-option *ngFor="let option of items" [value]="getValue(option)">
+      {{ getLabel(option) }}
+    </mat-option>
+  </mat-autocomplete>
+
+</mat-form-field>

@@ -1,0 +1,12 @@
+<div class="max-width">
+	<app-filter-select 
+    [items]="filteredUsers$ | async"
+    [formControl]="ctrl"
+    [searching]="searching"
+    bindLabel="name"
+    (filter)="onFilter($event)">
+  </app-filter-select>
+</div>
+<pre>
+  {{ ctrl.value | json }}
+</pre>
